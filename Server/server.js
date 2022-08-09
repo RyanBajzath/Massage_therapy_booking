@@ -1,12 +1,23 @@
 // import the needed node_modules.
 const express = require("express");
-const port = 8000;
 const app = express();
+const port = 8000;
+
+//import from handlers (destructure)
+const {
+  getProfileById,
+  createProfile,
+  deleteProfile,
+  updateProfile,
+} = require(`./handlers`);
 
 express();
-app.get(`/`, (req, res) => {
-  res.status(200).json({ status: 200, message: "hello!" });
-});
+
+//endpoints CRUD for profiles
+app.post(`/profiles`, createProfile);
+app.get(`/profiles/:_id`, getProfileById);
+app.patch("/profiles/:_id", updateProfile);
+app.delete("/profiles/:_id", deleteProfile);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
