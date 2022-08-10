@@ -45,7 +45,7 @@ const getProfile = async (req, res) => {
 //Patch a profile by its :_id param
 const updateProfile = async (req, res) => {
   const _id = req.params._id;
-  const query = { _id };
+  const query = { _id: _id };
   const client = new MongoClient(MONGO_URI, options);
   const newValues = { $set: { ...req.body } };
   try {
@@ -58,7 +58,6 @@ const updateProfile = async (req, res) => {
           .json({ status: 200, message: "document updated", _id, ...req.body })
       : res.status(404).json({ status: 404, _id, data: "Not Found" });
   } catch (err) {
-    console.log(err.stack);
     res.status(500).json({ status: 500, data: req.body, message: err.message });
   } finally {
     client.close();
@@ -72,7 +71,6 @@ const deleteProfile = async (req, res) => {
     await client.connect();
     const db = client.db("finalproject");
     const result = await db.collection("profiles").deleteOne({ _id });
-    console.log(result);
     // check if mongo found any matches in the database
     result.deletedCount
       ? res.sendStatus(204)
@@ -86,9 +84,9 @@ const deleteProfile = async (req, res) => {
 
 //For Appointments
 //Create a getAppointmen and give it a _id in the body
-const getAppointment = (req, res) => {};
+const createAppointment = async (req, res) => {};
 //Read getAppointmen by its :_id param
-const createAppointment = (req, res) => {};
+const getAppointment = (req, res) => {};
 //Patch a getAppointmen by its :_id param
 const updateAppointment = (req, res) => {};
 //Delete getAppointmen by its :_id param
