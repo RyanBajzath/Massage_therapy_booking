@@ -1,5 +1,5 @@
 import React from "react";
-import Signinpage from "./Signinpage";
+
 import styled from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ProfilePage from "./ProfilePage";
@@ -13,9 +13,7 @@ const App = () => {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route exact path="/signin">
-            <Signinpage />
-          </Route>
+
           <Route exact path="/profile">
             <ProfilePage />
           </Route>
