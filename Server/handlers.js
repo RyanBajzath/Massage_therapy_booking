@@ -65,7 +65,20 @@ const updateProfile = async (req, res) => {
   }
 };
 //Delete profile by its :_id param
-const deleteProfile = (req, res) => {};
+const deleteProfile = async (req, res) => {
+  const _id = req.params._id;
+  const client = new MongoClient(MONGO_URI, options);
+  try {
+    await client.connect();
+    const db = client.db("finalproject");
+    const result = await db.collection("profiles").deleteOne({ _id });
+    return res.status(204).json({ status: 204 });
+  } catch {
+    res.status(500).json({ status: 500, data: req.body, message: err.message });
+  } finally {
+    client.close();
+  }
+};
 
 //For Appointments
 //Create a getAppointmen and give it a _id in the body
