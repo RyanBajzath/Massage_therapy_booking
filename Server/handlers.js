@@ -1,5 +1,5 @@
 // this needed to use mongodp
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 
 require("dotenv").config();
 const { MONGO_URI } = process.env;
@@ -13,20 +13,35 @@ const options = {
 //For profiles
 //Create a profile and give it a _id in the body
 const createProfile = async (req, res) => {
-  console.log("req.body ", req.body);
   const client = new MongoClient(MONGO_URI, options);
   try {
     await client.connect();
     const db = client.db("finalproject");
     const result = await db.collection("profiles").insertOne(req.body);
-    res.status(201).json({ status: 201, data: result });
+    return res.status(201).json({ status: 201, data: result });
   } catch (err) {
-    console.log(err.stack);
-    res.status(500).json({ status: 500, message: err.message });
+    return res.status(500).json({ status: 500, message: err.message });
+  } finally {
+    client.close();
   }
 };
 //Read profile by its :_id param getProfileById
-const getProfile = (req, res) => {};
+const getProfile = async (req, res) => {
+  const _id = req.params._id;
+  const client = new MongoClient(MONGO_URI, options);
+  try {
+    await client.connect();
+    const db = client.db("finalproject");
+    const result = await db.collection("profiles").findOne({ _id });
+    result
+      ? res.status(200).json({ status: 201, _id, data: result })
+      : res.status(404).json({ status: 404, _id, data: "Not Found" });
+  } catch (err) {
+    return res.status(500).json({ status: 500, message: err.message });
+  } finally {
+    client.close();
+  }
+};
 //Patch a profile by its :_id param
 const updateProfile = (req, res) => {};
 //Delete profile by its :_id param
