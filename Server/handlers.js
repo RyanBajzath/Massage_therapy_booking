@@ -52,11 +52,11 @@ const updateProfile = async (req, res) => {
     await client.connect();
     const db = client.db("finalproject");
     const result = await db.collection("profiles").updateOne(query, newValues);
-    if (result.matchedCount === result.modifiedCount) {
-      res
-        .status(200)
-        .json({ status: 200, message: "document updated", _id, ...req.body });
-    }
+    result.matchedCount
+      ? res
+          .status(200)
+          .json({ status: 200, message: "document updated", _id, ...req.body })
+      : res.status(404).json({ status: 404, _id, data: "Not Found" });
   } catch (err) {
     console.log(err.stack);
     res.status(500).json({ status: 500, data: req.body, message: err.message });
@@ -72,8 +72,11 @@ const deleteProfile = async (req, res) => {
     await client.connect();
     const db = client.db("finalproject");
     const result = await db.collection("profiles").deleteOne({ _id });
-    return res.status(204).json({ status: 204 });
-  } catch {
+    // check if mongo found any matches in the database
+    result.matchedCount
+      ? res.status(204).json({ status: 204 })
+      : res.status(404).json({ status: 404, _id, data: "Not Found" });
+  } catch (err) {
     res.status(500).json({ status: 500, data: req.body, message: err.message });
   } finally {
     client.close();
