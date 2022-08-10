@@ -13,6 +13,7 @@ const options = {
 //For profiles
 //Create a profile and give it a _id in the body
 const createProfile = async (req, res) => {
+  console.log("req.body ", req.body);
   const client = new MongoClient(MONGO_URI, options);
   try {
     await client.connect();

@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const port = 8000;
-
+const bodyParser = require("body-parser");
 //import logic from handlers (destructure)
 const {
   getProfile,
@@ -15,20 +15,20 @@ const {
   deleteAppointment,
 } = require(`./handlers`);
 
-express();
+app
+  .use(express.json())
+  //endpoints CRUD for profiles
+  .post(`/profiles`, createProfile)
+  .get(`/profiles/:_id`, getProfile)
+  .patch("/profiles/:_id", updateProfile)
+  .delete("/profiles/:_id", deleteProfile)
 
-//endpoints CRUD for profiles
-app.post(`/profiles`, createProfile);
-app.get(`/profiles/:_id`, getProfile);
-app.patch("/profiles/:_id", updateProfile);
-app.delete("/profiles/:_id", deleteProfile);
+  //endpoints CRUD for Appointments
+  .post(`/Appointments`, getAppointment)
+  .get(`/Appointments/:_id`, createAppointment)
+  .patch("/Appointments/:_id", updateAppointment)
+  .delete("/Appointments/:_id", deleteAppointment)
 
-//endpoints CRUD for Appointments
-app.post(`/Appointments`, getAppointment);
-app.get(`/Appointments/:_id`, createAppointment);
-app.patch("/Appointments/:_id", updateAppointment);
-app.delete("/Appointments/:_id", deleteAppointment);
-
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
-});
+  .listen(port, () => {
+    console.log(`listening on port ${port}`);
+  });
