@@ -1,7 +1,20 @@
 import React from "react";
 
 const ProfilePage = () => {
-  return <div>ProfilePage</div>;
+  //create a profile via a post
+
+  return (
+    <div>
+      ProfilePage
+      <div>
+        <form>
+          <input />
+          <input />
+          <input />
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default ProfilePage;

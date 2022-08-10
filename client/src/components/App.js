@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ProfilePage from "./ProfilePage";
 import HomePage from "./HomePage";
+import SchedulePage from "./SchedulePage";
 
 const App = () => {
   return (
@@ -13,6 +14,9 @@ const App = () => {
           <Route exact path="/">
             <HomePage />
           </Route>
+          <SchedulePage exact path="/schedule">
+            <HomePage />
+          </SchedulePage>
 
           <Route exact path="/profile">
             <ProfilePage />
