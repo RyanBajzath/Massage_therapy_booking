@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 
 const CreateProfilePage = () => {
   const { user } = useAuth0();
@@ -126,4 +127,7 @@ const CreateProfilePage = () => {
   );
 };
 
-export default CreateProfilePage;
+export default withAuthenticationRequired(CreateProfilePage, {
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => <div>Redirecting you to the login page...</div>,
+});

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 
 const FetchProfilepage = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -37,4 +38,7 @@ const FetchProfilepage = () => {
   );
 };
 
-export default FetchProfilepage;
+export default withAuthenticationRequired(FetchProfilepage, {
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => <div>Redirecting you to the login page...</div>,
+});

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 
 const ProfilePage = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -38,4 +39,7 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default withAuthenticationRequired(ProfilePage, {
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => <div>Redirecting you to the login page...</div>,
+});
