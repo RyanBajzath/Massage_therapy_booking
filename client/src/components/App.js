@@ -7,6 +7,7 @@ import HomePage from "./HomePage";
 import SchedulePage from "./SchedulePage";
 import CreateProfilePage from "./CreateProfilePage";
 import EditProfilePage from "./EditProfilePage";
+import FetchProfilepage from "./FetchProfilePage";
 
 const App = () => {
   return (
@@ -21,6 +22,12 @@ const App = () => {
           </Route>
           <Route exact path="/editprofilepage">
             <EditProfilePage />
+          </Route>
+          <Route exact path="/fetchprofilepage">
+            <FetchProfilepage />
+          </Route>
+          <Route exact path="/profilepage">
+            <FetchProfilepage />
           </Route>
 
           <Route exact path="/profile">

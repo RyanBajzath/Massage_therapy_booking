@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const ProfilePage = () => {
+const FetchProfilepage = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [userInfo, setUserInfo] = useState({});
+
+  // console.log(user);
 
   useEffect(() => {
     fetch(`/profiles/${user.email}`)
@@ -24,9 +26,6 @@ const ProfilePage = () => {
   return (
     isAuthenticated && (
       <div>
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
         <div>
           <p>name: {userInfo.name}</p>
           <p>Medication: {userInfo.medication}</p>
@@ -38,4 +37,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default FetchProfilepage;
