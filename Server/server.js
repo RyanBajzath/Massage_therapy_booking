@@ -2,7 +2,23 @@
 const express = require("express");
 const app = express();
 const port = 8000;
-const bodyParser = require("body-parser");
+
+// const cors = require("cors");
+
+// app.use(cors());
+
+// app.use(
+//   "/api",
+//   createProxyMiddleware({
+//     target: "http://localhost:3000/",
+//     changeOrigin: true,
+//     //secure: false,
+//     onProxyRes: function (proxyRes, req, res) {
+//       proxyRes.headers["Access-Control-Allow-Origin"] = "*";
+//     },
+//   })
+// );
+
 //import logic from handlers (destructure)
 const {
   getProfile,

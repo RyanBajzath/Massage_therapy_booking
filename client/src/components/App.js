@@ -5,6 +5,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ProfilePage from "./ProfilePage";
 import HomePage from "./HomePage";
 import SchedulePage from "./SchedulePage";
+import CreateProfilePage from "./CreateProfilePage";
+import EditProfilePage from "./EditProfilePage";
 
 const App = () => {
   return (
@@ -14,9 +16,12 @@ const App = () => {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <SchedulePage exact path="/schedule">
-            <HomePage />
-          </SchedulePage>
+          <Route exact path="/createprofilepage">
+            <CreateProfilePage />
+          </Route>
+          <Route exact path="/editprofilepage">
+            <EditProfilePage />
+          </Route>
 
           <Route exact path="/profile">
             <ProfilePage />
