@@ -1,41 +1,81 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 
 const CreateProfilePage = () => {
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userPhoneNumber, setUserPhoneNumber] = useState("");
-  const [userMedication, setUserMedication] = useState("");
+  // const [userName, setUserName] = useState("");
+  // const [userEmail, setUserEmail] = useState("");
+  // const [userPhoneNumber, setUserPhoneNumber] = useState("");
+  // const [userMedication, setUserMedication] = useState("");
 
-  const handleUserNameChange = (event) => {
-    setUserName(event.target.value);
-    console.log(userName);
+  //updated for all values in one object
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    medication: "",
+  });
+
+  //one handle change for all the values in a dyncamic nature
+  const handleUserChange = (e) => {
+    e.preventDefault();
+    setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
 
-  const handleEmailChange = (event) => {
-    setUserEmail(event.target.value);
-  };
+  // here is the older way I did
+  // const handleUserNameChange = (event) => {
+  //   setUserName(event.target.value);
+  // };
 
-  const handlephoneChange = (event) => {
-    setUserPhoneNumber(event.target.value);
-  };
+  // const handleEmailChange = (event) => {
+  //   setUserEmail(event.target.value);
+  // };
 
-  const handleMedicationChange = (event) => {
-    setUserMedication(event.target.value);
-  };
+  // const handlephoneChange = (event) => {
+  //   setUserPhoneNumber(event.target.value);
+  // };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetch("http://localhost:8000", {
+  // const handleMedicationChange = (event) => {
+  //   setUserMedication(event.target.value);
+  // };
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   fetch("/profiles", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       name: userName,
+  //       email: userEmail,
+  //       phone: userPhoneNumber,
+  //       medication: userMedication,
+  //       _id: userEmail,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Success:", data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("/profiles", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: userName,
-        email: userEmail,
-        phone: userPhoneNumber,
-        medication: userMedication,
-        _id: userEmail,
+        ...userInfo,
+
+        name: e.target.name.value,
+        email: e.target.email.value,
+        phone: e.target.phone.value,
+        medication: e.target.medication.value,
+        _id: e.target.email.value,
       }),
     })
       .then((response) => response.json())
@@ -53,27 +93,27 @@ const CreateProfilePage = () => {
       <div>
         <form onSubmit={handleSubmit}>
           <input
-            onChange={handleUserNameChange}
+            onChange={handleUserChange}
             placeholder="Name here"
             name="name"
             type="text"
           />
           <input
-            onChange={handleEmailChange}
+            onChange={handleUserChange}
             placeholder="Email"
             name="email"
             type="email"
           />
           <input
-            onChange={handlephoneChange}
+            onChange={handleUserChange}
             placeholder="phone Number"
-            name="phone number"
+            name="phone"
             type="number"
           />
           <input
-            onChange={handleMedicationChange}
+            onChange={handleUserChange}
             placeholder="Medication"
-            name="Medication"
+            name="medication"
             type="text"
           />
           <button>Create Profile</button>
