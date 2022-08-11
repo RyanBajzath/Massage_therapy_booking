@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const CreateProfilePage = () => {
+  const { user } = useAuth0();
   // const [userName, setUserName] = useState("");
   // const [userEmail, setUserEmail] = useState("");
   // const [userPhoneNumber, setUserPhoneNumber] = useState("");
@@ -9,7 +11,7 @@ const CreateProfilePage = () => {
   //updated for all values in one object
   const [userInfo, setUserInfo] = useState({
     name: "",
-    email: "",
+    // email: "",
     phone: "",
     medication: "",
   });
@@ -72,10 +74,10 @@ const CreateProfilePage = () => {
         ...userInfo,
 
         name: e.target.name.value,
-        email: e.target.email.value,
+        // email: e.target.email.value,
         phone: e.target.phone.value,
         medication: e.target.medication.value,
-        _id: e.target.email.value,
+        _id: user.email,
       }),
     })
       .then((response) => response.json())
@@ -98,12 +100,12 @@ const CreateProfilePage = () => {
             name="name"
             type="text"
           />
-          <input
+          {/* <input
             onChange={handleUserChange}
             placeholder="Email"
             name="email"
             type="email"
-          />
+          /> */}
           <input
             onChange={handleUserChange}
             placeholder="phone Number"
