@@ -5,7 +5,7 @@ const FetchProfilepage = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [userInfo, setUserInfo] = useState({});
 
-  // console.log(user);
+  console.log(user.email);
 
   useEffect(() => {
     fetch(`/profiles/${user.email}`)

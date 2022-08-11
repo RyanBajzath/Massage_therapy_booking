@@ -26,9 +26,6 @@ const App = () => {
           <Route exact path="/fetchprofilepage">
             <FetchProfilepage />
           </Route>
-          <Route exact path="/profilepage">
-            <FetchProfilepage />
-          </Route>
 
           <Route exact path="/profile">
             <ProfilePage />
