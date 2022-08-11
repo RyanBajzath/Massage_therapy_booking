@@ -8,6 +8,7 @@ import SchedulePage from "./SchedulePage";
 import CreateProfilePage from "./CreateProfilePage";
 import EditProfilePage from "./EditProfilePage";
 import FetchProfilepage from "./FetchProfilePage";
+import DeleteUsePage from "./DeleteUsePage";
 
 const App = () => {
   return (
@@ -16,6 +17,10 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <HomePage />
+          </Route>
+
+          <Route exact path="/deleteprofilepage">
+            <DeleteUsePage />
           </Route>
           <Route exact path="/createprofilepage">
             <CreateProfilePage />

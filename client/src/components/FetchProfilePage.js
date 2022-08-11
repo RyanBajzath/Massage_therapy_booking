@@ -17,7 +17,7 @@ const FetchProfilepage = () => {
         console.log(error);
       });
   }, []);
-  console.log(userInfo);
+  // console.log(userInfo);
 
   if (isLoading) {
     return <div>Loading ...</div>;
