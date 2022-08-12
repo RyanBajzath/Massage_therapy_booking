@@ -32,6 +32,7 @@ const FetchProfilepage = () => {
           <p>Medication: {userInfo.medication}</p>
           <p>Phone: {userInfo.phone}</p>
           <p>email(ID): {userInfo._id} </p>
+          <p>Appointment: {userInfo.appointment} </p>
           <p>{userInfo.head === true && "Tension in head"}</p>
           <p>{userInfo.shoulders === true && "Tension in shoulders"}</p>
           <p>{userInfo.arms === true && "Tension in arms"}</p>

@@ -22,6 +22,7 @@ const CreateProfilePage = () => {
     arms: false,
     upperback: false,
     loweback: false,
+    appointment: "none yet",
   });
 
   //one handle change for all the values in a dyncamic nature
@@ -91,6 +92,7 @@ const CreateProfilePage = () => {
         arms: e.target.arms.checked,
         upperback: e.target.upperback.checked,
         loweback: e.target.loweback.checked,
+        appointment: "none",
       }),
     })
       .then((response) => response.json())
