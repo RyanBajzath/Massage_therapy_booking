@@ -34,6 +34,9 @@ const App = () => {
             <Route exact path="/fetchprofilepage">
               <FetchProfilepage />
             </Route>
+            <Route exact path="/scheduleappointment">
+              <SchedulePage />
+            </Route>
 
             <Route exact path="/profile">
               <ProfilePage />

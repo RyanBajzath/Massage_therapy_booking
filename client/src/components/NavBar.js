@@ -20,6 +20,7 @@ const NavBar = () => {
         <NavLink to="/createprofilepage"> Create Profile </NavLink>
         <NavLink to="/editprofilepage"> Update profile </NavLink>
         <NavLink to="/deleteprofilepage"> Delete profile </NavLink>
+        <NavLink to="/scheduleappointment"> Appointment </NavLink>
         <Profile />
         {/* <FetchProfilePage /> */}
         {user ? <LogoutButton /> : <LoginButton />}
