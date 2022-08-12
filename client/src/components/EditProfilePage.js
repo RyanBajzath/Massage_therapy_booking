@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
+import { NavLink } from "react-router-dom";
 
 const EditProfilePage = () => {
   const { user } = useAuth0();
@@ -61,7 +62,7 @@ const EditProfilePage = () => {
             placeholder="Name here"
             name="name"
             type="text"
-            required
+            // required
           />
           {/* <input
             onChange={handleUserChange}
@@ -74,14 +75,14 @@ const EditProfilePage = () => {
             placeholder="phone Number"
             name="phone"
             type="number"
-            required
+            // required
           />
           <input
             onChange={handleUserChange}
             placeholder="Medication"
             name="medication"
             type="text"
-            required
+            // required
           />
           <div>
             Head
@@ -120,7 +121,9 @@ const EditProfilePage = () => {
               onChange={handleUserChange}
             />
           </div>
+          {/* <NavLink to="/fetchprofilepage"> */}
           <button>update profile</button>
+          {/* </NavLink> */}
         </form>
       </div>
     </div>

@@ -6,7 +6,7 @@ const FetchProfilepage = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [userInfo, setUserInfo] = useState({});
 
-  console.log(user.email);
+  // console.log(user.email);
 
   useEffect(() => {
     fetch(`/profiles/${user.email}`)
@@ -32,6 +32,11 @@ const FetchProfilepage = () => {
           <p>Medication: {userInfo.medication}</p>
           <p>Phone: {userInfo.phone}</p>
           <p>email(ID): {userInfo._id} </p>
+          <p>{userInfo.head === true && "Tension in head"}</p>
+          <p>{userInfo.shoulders === true && "Tension in shoulders"}</p>
+          <p>{userInfo.arms === true && "Tension in arms"}</p>
+          <p>{userInfo.upperback === true && "Tension in upperback"}</p>
+          <p>{userInfo.loweback === true && "Tension in loweback"}</p>
         </div>
       </div>
     )

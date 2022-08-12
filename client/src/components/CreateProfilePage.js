@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
+import { NavLink } from "react-router-dom";
 
 const CreateProfilePage = () => {
   const { user } = useAuth0();
@@ -71,7 +72,7 @@ const CreateProfilePage = () => {
   // };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     fetch("/profiles", {
       method: "POST",
       headers: {
@@ -95,7 +96,13 @@ const CreateProfilePage = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        data.status === 201 && alert("Profile created");
+        data.status === 500 &&
+          alert(
+            "Profile Already created, please update or delete profile instead"
+          );
       })
+
       .catch((error) => {
         console.error("Error:", error);
       });
