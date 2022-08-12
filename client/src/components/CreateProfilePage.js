@@ -71,7 +71,7 @@ const CreateProfilePage = () => {
   // };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     fetch("/profiles", {
       method: "POST",
       headers: {
