@@ -16,11 +16,16 @@ const CreateProfilePage = () => {
     // email: "",
     phone: "",
     medication: "",
+    head: false,
+    shoulders: false,
+    arms: false,
+    upperback: false,
+    loweback: false,
   });
 
   //one handle change for all the values in a dyncamic nature
   const handleUserChange = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
 
@@ -80,6 +85,11 @@ const CreateProfilePage = () => {
         phone: e.target.phone.value,
         medication: e.target.medication.value,
         _id: user.email,
+        head: e.target.head.checked,
+        shoulders: e.target.shoulders.checked,
+        arms: e.target.arms.checked,
+        upperback: e.target.upperback.checked,
+        loweback: e.target.loweback.checked,
       }),
     })
       .then((response) => response.json())
@@ -101,6 +111,7 @@ const CreateProfilePage = () => {
             placeholder="Name here"
             name="name"
             type="text"
+            required
           />
           {/* <input
             onChange={handleUserChange}
@@ -113,13 +124,53 @@ const CreateProfilePage = () => {
             placeholder="phone Number"
             name="phone"
             type="number"
+            required
           />
           <input
             onChange={handleUserChange}
             placeholder="Medication"
             name="medication"
             type="text"
+            required
           />
+          <div>
+            Head
+            <input
+              type="checkbox"
+              name="head"
+              value="tension"
+              onChange={handleUserChange}
+            />
+            shoulders
+            <input
+              type="checkbox"
+              name="shoulders"
+              value="tension"
+              onChange={handleUserChange}
+            />
+            arms
+            <input
+              type="checkbox"
+              name="arms"
+              value="tension"
+              onChange={handleUserChange}
+            />
+            upperback
+            <input
+              type="checkbox"
+              name="upperback"
+              value="tension"
+              onChange={handleUserChange}
+            />
+            lowerback
+            <input
+              type="checkbox"
+              name="loweback"
+              value="tension"
+              onChange={handleUserChange}
+            />
+          </div>
+
           <button>Create Profile</button>
         </form>
       </div>
