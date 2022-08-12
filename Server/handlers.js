@@ -43,6 +43,23 @@ const getProfile = async (req, res) => {
     client.close();
   }
 };
+
+//get all profiles
+const getProfiles = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  try {
+    await client.connect();
+    const db = client.db("finalproject");
+    const result = await db.collection("profiles").find().toArray();
+    result
+      ? res.status(200).json({ status: 201, data: result })
+      : res.status(404).json({ status: 404, data: "Not Found" });
+  } catch (err) {
+    return res.status(500).json({ status: 500, message: err.message });
+  } finally {
+    client.close();
+  }
+};
 //Patch a profile by its :_id param
 const updateProfile = async (req, res) => {
   const _id = req.params._id;
@@ -96,6 +113,7 @@ const deleteAppointment = (req, res) => {};
 //export handlers
 module.exports = {
   getProfile,
+  getProfiles,
   createProfile,
   updateProfile,
   deleteProfile,

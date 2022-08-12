@@ -22,6 +22,7 @@ const port = 8000;
 //import logic from handlers (destructure)
 const {
   getProfile,
+  getProfiles,
   createProfile,
   deleteProfile,
   updateProfile,
@@ -36,14 +37,15 @@ app
   //endpoints CRUD for profiles
   .post(`/profiles`, createProfile)
   .get(`/profiles/:_id`, getProfile)
+  .get("/profiles", getProfiles)
   .patch("/profiles/:_id", updateProfile)
   .delete("/profiles/:_id", deleteProfile)
 
   //endpoints CRUD for Appointments
-  .post(`/Appointments`, getAppointment)
-  .get(`/Appointments/:_id`, createAppointment)
-  .patch("/Appointments/:_id", updateAppointment)
-  .delete("/Appointments/:_id", deleteAppointment)
+  .post(`/appointments`, getAppointment)
+  .get(`/appointments/:_id`, createAppointment)
+  .patch("/appointments/:_id", updateAppointment)
+  .delete("/appointments/:_id", deleteAppointment)
 
   .listen(port, () => {
     console.log(`listening on port ${port}`);
