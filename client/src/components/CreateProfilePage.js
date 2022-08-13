@@ -43,7 +43,8 @@ const CreateProfilePage = () => {
     ebdocrine: false,
     respiratory: false,
     avoidAreas: "",
-    name: "",
+    goals: "",
+
     appointment: "none yet",
   });
 
@@ -114,6 +115,7 @@ const CreateProfilePage = () => {
         medication: e.target.medication.value,
         otherPhysicalActivity: e.target.otherPhysicalActivity.value,
         avoidAreas: e.target.avoidAreas.value,
+        goals: e.target.goals.value,
 
         // email: e.target.email.value,
 

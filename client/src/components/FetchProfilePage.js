@@ -29,15 +29,40 @@ const FetchProfilepage = () => {
       <div>
         <div>
           <p>name: {userInfo.name}</p>
-          <p>Medication: {userInfo.medication}</p>
-          <p>Phone: {userInfo.phone}</p>
-          <p>email(ID): {userInfo._id} </p>
-          <p>Appointment: {userInfo.appointment} </p>
+          <p>phone: {userInfo.phone}</p>
+          <p>birthday: {userInfo.birthday}</p>
+          <p>occupation: {userInfo.occupation}</p>
+          <p>emergencyContact: {userInfo.emergencyContact}</p>
+          <p>address: {userInfo.address}</p>
+          <p>medication: {userInfo.medication}</p>
+          <p>otherPhysicalActivity: {userInfo.otherPhysicalActivity}</p>
+          <p>avoidAreas: {userInfo.avoidAreas}</p>
+          <p>goals: {userInfo.goals}</p>
           <p>{userInfo.head === true && "Tension in head"}</p>
-          <p>{userInfo.shoulders === true && "Tension in shoulders"}</p>
-          <p>{userInfo.arms === true && "Tension in arms"}</p>
+          <p>{userInfo.neck === true && "Tension in neck"}</p>
+          <p>{userInfo.leftShoulder === true && "Tension in leftShoulder"}</p>
+          <p>{userInfo.RightShoulder === true && "Tension in RightShoulder"}</p>
+          <p>{userInfo.leftArm === true && "Tension in leftArm"}</p>
+          <p>{userInfo.rightArm === true && "Tension in rightArm"}</p>
           <p>{userInfo.upperback === true && "Tension in upperback"}</p>
           <p>{userInfo.loweback === true && "Tension in loweback"}</p>
+          <p>{userInfo.leftLeg === true && "Tension in leftLeg"}</p>
+          <p>{userInfo.rightLeg === true && "Tension in rightLeg"}</p>
+          <p>
+            {userInfo.circulatory === true && "Issue with circulatory system"}
+          </p>
+          <p>{userInfo.digestive === true && "Issue with digestive system"}</p>
+          <p>{userInfo.skin === true && "Issue with skin"}</p>
+          <p>{userInfo.urinary === true && "Issue with urinary system"}</p>
+          <p>{userInfo.lymphatic === true && "Issue with lymphatic system"}</p>
+          <p>{userInfo.nervouse === true && "Issue with nervouse system"}</p>
+          <p>{userInfo.muscular === true && "Issue with muscular system"}</p>
+          <p>{userInfo.skeletal === true && "Issue with skeletal system"}</p>
+          <p>{userInfo.ebdocrine === true && "Issue with ebdocrine system"}</p>
+          <p>
+            {userInfo.respiratory === true && "Issue with respiratory system"}
+          </p>
+          <p>Next Appoitment: {userInfo.appointment}</p>
         </div>
       </div>
     )
