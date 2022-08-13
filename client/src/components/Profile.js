@@ -10,13 +10,7 @@ const Profile = () => {
     return <div>Loading ...</div>;
   }
 
-  return (
-    isAuthenticated && (
-      <div>
-        <h3>Welcome {user.email}</h3>
-      </div>
-    )
-  );
+  return isAuthenticated && <div></div>;
 };
 
 export default Profile;
