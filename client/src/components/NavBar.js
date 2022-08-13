@@ -14,8 +14,8 @@ const NavBar = () => {
   }
   return (
     <div>
-      HomePage
       <div>
+        <NavLink to="/"> Home Page </NavLink>
         <NavLink to="/fetchprofilepage"> See profile </NavLink>
         <NavLink to="/createprofilepage"> Create Profile </NavLink>
         <NavLink to="/editprofilepage"> Update profile </NavLink>

@@ -12,17 +12,7 @@ function HomePage() {
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-  return (
-    <div>
-      HomePage
-      <div>
-        <NavLink to="/fetchprofilepage"> to profile </NavLink>
-        <Profile />
-        {/* <FetchProfilePage /> */}
-        {user ? <LogoutButton /> : <LoginButton />}
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default HomePage;
