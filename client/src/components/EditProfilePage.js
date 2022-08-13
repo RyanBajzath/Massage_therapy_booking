@@ -113,7 +113,7 @@ const EditProfilePage = () => {
             placeholder="Name here"
             name="name"
             type="text"
-            // required
+            required
           />
           <span>Phone number:</span>
           <input
@@ -121,7 +121,7 @@ const EditProfilePage = () => {
             placeholder="Phone number here"
             name="phone"
             type="text"
-            // required
+            required
           />
           <span>Date of birth:</span>
           <input
@@ -129,7 +129,7 @@ const EditProfilePage = () => {
             placeholder="birthday here"
             name="birthday"
             type="text"
-            // required
+            required
           />
           <span>Occupation:</span>
           <input
@@ -137,7 +137,7 @@ const EditProfilePage = () => {
             placeholder="Occupation here"
             name="occupation"
             type="text"
-            // required
+            required
           />
           <span>Emergency Contact:</span>
           <input
@@ -145,7 +145,7 @@ const EditProfilePage = () => {
             placeholder="Emergency Contact here"
             name="emergencyContact"
             type="text"
-            // required
+            required
           />
           <span>Address:</span>
           <input
@@ -153,7 +153,7 @@ const EditProfilePage = () => {
             placeholder="Address Number"
             name="address"
             type="text"
-            // required
+            required
           />
 
           <span>Medication</span>
@@ -162,7 +162,7 @@ const EditProfilePage = () => {
             placeholder="Medication"
             name="medication"
             type="text"
-            // required
+            required
           />
 
           <span>Any other physical activity?:</span>
@@ -171,7 +171,7 @@ const EditProfilePage = () => {
             placeholder="other physical activity"
             name="otherPhysicalActivity"
             type="text"
-            // required
+            required
           />
         </div>
         <div>
