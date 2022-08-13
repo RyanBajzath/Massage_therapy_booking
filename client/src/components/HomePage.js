@@ -19,23 +19,8 @@ function HomePage() {
         <Title>RuRu's Massage Therapy </Title>
       </div>
       <FactsContainer>
-        <h2>Did you know?</h2>
-        <iframe
-          src="https://giphy.com/embed/ybYZ9eHtPKRWCPHFTW"
-          width="480"
-          height="480"
-          frameBorder="0"
-          class="giphy-embed"
-          allowFullScreen
-        ></iframe>
-        <p>
-          <a
-            size
-            href="https://giphy.com/gifs/TheCheekyPanda-cartoon-panda-idea-ybYZ9eHtPKRWCPHFTW"
-          >
-            via GIPHY
-          </a>
-        </p>
+        <span>Did you know?</span>
+        <DidYouKnowPanda src="https://media.giphy.com/media/ybYZ9eHtPKRWCPHFTW/giphy.gif" />
         <h3>
           “Massage is to the human body what a tune-up is to a car” -Chicago
           Tribune
@@ -67,8 +52,16 @@ const Title = styled.h1`
 const FactsContainer = styled.div`
   /* width: 30vw; */
   /* display: flex; */
+  font-size: 30px;
 
   flex-direction: column;
+`;
+const DidYouKnowPanda = styled.img`
+  /* margin-top: 45px; */
+  /* left: -20vw; */
+  /* width: 50px; */
+  height: 300px;
+  /* object-fit: contain; */
 `;
 
 export default HomePage;
