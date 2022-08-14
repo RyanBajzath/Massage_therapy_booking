@@ -65,7 +65,8 @@ const NavBarContainer = styled.div`
   justify-content: space-between;
   /* width: 80vw; */
   /* background-color: rgba(0, 0, 0, 0.05); */
-  background-color: snow;
+  background-color: rgba(183, 246, 247, 0.5);
+
   border: 3px black solid;
 `;
 
@@ -75,9 +76,10 @@ const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: black;
   font-weight: bold;
+  padding: 15px;
   &:hover {
-    color: red;
     cursor: pointer;
+    outline: solid black 3px;
   }
 `;
 
