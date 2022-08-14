@@ -98,11 +98,7 @@ const FactsTitle = styled.div`
 `;
 
 const DidYouKnowPanda = styled.img`
-  /* margin-top: 45px; */
-  /* left: -20vw; */
-  /* width: 50px; */
   height: 20vw;
-  /* object-fit: contain; */
 `;
 const FactsBottom = styled.div`
   font-size: 20px;

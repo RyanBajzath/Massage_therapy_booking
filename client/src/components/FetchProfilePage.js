@@ -28,104 +28,103 @@ const FetchProfilepage = () => {
   return (
     isAuthenticated && (
       <ProfileInfoDiv>
-        <h2>Basic Information</h2>
+        <RecommendedTitleDiv>
+          <StyledTitles>Basic Information</StyledTitles>
+        </RecommendedTitleDiv>
         <BasicInfoDiv>
-          <p>name: {userInfo.name}</p>
-          <p>phone: {userInfo.phone}</p>
-          <p>birthday: {userInfo.birthday}</p>
-          <p>occupation: {userInfo.occupation}</p>
-          <p>emergencyContact: {userInfo.emergencyContact}</p>
-          <p>address: {userInfo.address}</p>
-          <p>medication: {userInfo.medication}</p>
-          <p>otherPhysicalActivity: {userInfo.otherPhysicalActivity}</p>
-          <p>avoidAreas: {userInfo.avoidAreas}</p>
-          <p>goals: {userInfo.goals}</p>
+          <div>
+            <p>|name: {userInfo.name} |</p>
+            <p>|phone: {userInfo.phone}|</p>
+          </div>
+          <div>
+            <p>|birthday: {userInfo.birthday}|</p>
+
+            <p>|occupation: {userInfo.occupation}|</p>
+          </div>
+          <div>
+            <p>|emergencyContact: {userInfo.emergencyContact}|</p>
+
+            <p>|address: {userInfo.address}|</p>
+          </div>
+
+          <div>
+            <p>|medication: {userInfo.medication}|</p>
+            <p>|otherPhysicalActivity: {userInfo.otherPhysicalActivity}|</p>
+          </div>
+          <div>
+            <p>|avoidAreas: {userInfo.avoidAreas}|</p>
+            <p>|goals: {userInfo.goals}|</p>
+          </div>
         </BasicInfoDiv>
-        <h2>Tension location</h2>
+        <RecommendedTitleDiv>
+          <StyledTitles>Tension location</StyledTitles>
+        </RecommendedTitleDiv>
         <TensionLocationDiv>
-          <p>{userInfo.head === true && "head"}</p>
-          <p>{userInfo.neck === true && "neck"}</p>
-          <p>{userInfo.leftShoulder === true && "leftShoulder"}</p>
-          <p>{userInfo.RightShoulder === true && "RightShoulder"}</p>
-          <p>{userInfo.leftArm === true && "leftArm"}</p>
-          <p>{userInfo.rightArm === true && "rightArm"}</p>
-          <p>{userInfo.upperback === true && "upperback"}</p>
-          <p>{userInfo.loweback === true && "loweback"}</p>
-          <p>{userInfo.leftLeg === true && "leftLeg"}</p>
-          <p>{userInfo.rightLeg === true && "rightLeg"}</p>
+          {userInfo.head === true && "| head | "}
+          {userInfo.neck === true && "| neck | "}
+          {userInfo.leftShoulder === true && "| leftShoulder | "}
+          {userInfo.RightShoulder === true && "| RightShoulder | "}
+          {userInfo.leftArm === true && "| leftArm | "}
+          {userInfo.rightArm === true && " | rightArm | "}
+          {userInfo.upperback === true && "| upperback | "}
+          {userInfo.loweback === true && "| loweback | "}
+          {userInfo.leftLeg === true && "| leftLeg | "}
+          {userInfo.rightLeg === true && "| rightLeg | "}
         </TensionLocationDiv>
-        <h2>Health issues</h2>
+        <RecommendedTitleDiv>
+          <StyledTitles>Health issues</StyledTitles>
+        </RecommendedTitleDiv>
         <HealthIssuesDiv>
-          <p>{userInfo.circulatory === true && "circulatory system"}</p>
-          <p>{userInfo.digestive === true && "digestive system"}</p>
-          <p>{userInfo.skin === true && "skin"}</p>
-          <p>{userInfo.urinary === true && "urinary system"}</p>
-          <p>{userInfo.lymphatic === true && "lymphatic system"}</p>
-          <p>{userInfo.nervouse === true && "nervouse system"}</p>
-          <p>{userInfo.muscular === true && "muscular system"}</p>
-          <p>{userInfo.skeletal === true && "skeletal system"}</p>
-          <p>{userInfo.ebdocrine === true && "ebdocrine system"}</p>
-          <p>{userInfo.respiratory === true && "respiratory system"}</p>
+          {userInfo.circulatory === true && " |circulatory system |"}
+          {userInfo.digestive === true && " |digestive system |"}
+          {userInfo.skin === true && " | skin |"}
+          {userInfo.urinary === true && "| urinary system |"}
+          {userInfo.lymphatic === true && " | lymphatic system |"}
+          {userInfo.nervouse === true && "| nervouse system |"}
+          {userInfo.muscular === true && " | muscular system |"}
+          {userInfo.skeletal === true && " | keletal system |"}
+          {userInfo.ebdocrine === true && "| ebdocrine system |"}
+          {userInfo.respiratory === true && " | respiratory system |"}
         </HealthIssuesDiv>
-        <div>
-          <h2>Next appointment</h2>
+        <RecommendedTitleDiv>
+          <StyledTitles>Next appointment</StyledTitles>
+        </RecommendedTitleDiv>
+        <NextAppointmentDiv>
           <p>{userInfo.appointment}</p>
-        </div>
-        <h2>Recommended stretches</h2>
+        </NextAppointmentDiv>
+        <RecommendedTitleDiv>
+          <StyledTitles>
+            Recommended stretches
+            <PandaImg src={require("../images/panda.png")} />
+          </StyledTitles>
+        </RecommendedTitleDiv>
 
         <RecommendedDiv>
-          <PandaImg src={require("../images/panda.png")} />
           <div>
             {userInfo.neck && (
               <StretchImg src={require("../images/neckStretch.png")} />
             )}
           </div>
           <div>
-            {userInfo.LeftShoulder && (
+            {userInfo.leftShoulder && (
               <StretchImg src={require("../images/shoulderStretch.png")} />
             )}
           </div>
-          {/* <div>
-            {userInfo.RightShoulder && (
-              <img src={require("../images/shoulderStretch.png")} />
-            )}
-          </div> */}
-          {/* <div>
-            {userInfo.leftArm && (
-              <img src={require("../images/neckStretch.png")} />
+          <div>
+            {userInfo.upperback && (
+              <StretchImg src={require("../images/back.png")} />
             )}
           </div>
           <div>
-            {userInfo.rightArm && (
-              <img src={require("../images/neckStretch.png")} />
+            {userInfo.loweback && (
+              <StretchImg src={require("../images/lowerBackStretch.png")} />
             )}
-          </div> */}
-          <div>
-            <p>
-              {userInfo.upperback && (
-                <StretchImg src={require("../images/back.png")} />
-              )}
-            </p>
           </div>
           <div>
-            <p>
-              {userInfo.loweback && (
-                <StretchImg src={require("../images/lowerBackStretch.png")} />
-              )}
-            </p>
-          </div>
-          <div>
-            <p>
-              {userInfo.leftLeg && (
-                <StretchImg src={require("../images/legStretch.png")} />
-              )}
-            </p>
-          </div>
-          {/* <div>
-            {userInfo.rightLeg && (
-              <img src={require("../images/legStretch.png")} />
+            {userInfo.leftLeg && (
+              <StretchImg src={require("../images/legStretch.png")} />
             )}
-          </div> */}
+          </div>
         </RecommendedDiv>
       </ProfileInfoDiv>
     )
@@ -144,41 +143,59 @@ const ProfileInfoDiv = styled.div`
   border-bottom: black solid 4px;
 `;
 
+const StyledTitles = styled.h2`
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px gray solid;
+`;
+
 const BasicInfoDiv = styled.div`
   display: flex;
-  gap: 20px;
+  /* flex-direction: column; */
+  justify-content: center;
+  gap: 30px;
   /* font-weight: bold; */
   font-size: 20px;
-  margin-left: 20px;
 `;
 
 const TensionLocationDiv = styled.div`
   display: flex;
-  gap: 20px;
+  justify-content: center;
   font-size: 20px;
-  margin-left: 20px;
 `;
 
 const HealthIssuesDiv = styled.div`
   display: flex;
-  gap: 20px;
+  justify-content: center;
+
   font-size: 20px;
-  margin-left: 20px;
+`;
+
+const NextAppointmentDiv = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 const PandaImg = styled.img`
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
+  margin-top: -50px;
+`;
+
+const RecommendedTitleDiv = styled.div`
+  display: flex;
+  /* align-content: center; */
+  justify-content: center;
+  align-items: center;
 `;
 
 const RecommendedDiv = styled.div`
   display: flex;
-  justify-content: space-around;
-  margin-left: 20px;
+  justify-content: center;
 `;
 const StretchImg = styled.img`
   /* height: 200px; */
-  width: 300px;
+  width: 20vw;
   /* margin-left: -50px; */
 `;
 
