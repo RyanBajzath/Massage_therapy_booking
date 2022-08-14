@@ -63,7 +63,10 @@ const NavBarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80vw;
+  /* width: 80vw; */
+  /* background-color: rgba(0, 0, 0, 0.05); */
+  background-color: snow;
+  border: 3px black solid;
 `;
 
 const StyledNavLink = styled(NavLink)`
