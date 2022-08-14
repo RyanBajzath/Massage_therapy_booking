@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 
 const DeleteUsePage = () => {
   const { user } = useAuth0();
@@ -13,8 +14,8 @@ const DeleteUsePage = () => {
     })
       .then((res) => res.json()) // or res.json()
       .then((res) => {
-        res.status === 404 && alert("already deleted");
-        res.status === 200 && alert("Profile Deleted");
+        res.status === 404 && Swal.fire("Already Deleted");
+        res.status === 200 && Swal.fire("Profile Deleted");
         console.log(res.status);
       });
   };

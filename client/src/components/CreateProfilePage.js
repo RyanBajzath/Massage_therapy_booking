@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 
 const CreateProfilePage = () => {
   const { user } = useAuth0();
@@ -147,11 +148,8 @@ const CreateProfilePage = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        data.status === 201 && alert("Profile created");
-        data.status === 500 &&
-          alert(
-            "Profile Already created, please update or delete profile instead"
-          );
+        data.status === 201 && Swal.fire("Profile Created");
+        data.status === 500 && Swal.fire("Profile Already Created!");
       })
 
       .catch((error) => {

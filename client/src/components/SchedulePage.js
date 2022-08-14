@@ -4,6 +4,7 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
 import "react-calendar/dist/Calendar.css";
+import Swal from "sweetalert2";
 
 const SchedulePage = () => {
   const [value, onChange] = useState(new Date());
@@ -23,7 +24,7 @@ const SchedulePage = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
+        data.status === 201 && Swal.fire("Profile Created");
       })
       .catch((error) => {
         console.error("Error:", error);

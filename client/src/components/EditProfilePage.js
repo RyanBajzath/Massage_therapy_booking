@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 
 const EditProfilePage = () => {
   const { user } = useAuth0();
@@ -96,6 +97,8 @@ const EditProfilePage = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        data.status === 201 && Swal.fire("Profile Updated");
+        data.status === 500 && Swal.fire("error");
       })
       .catch((error) => {
         console.error("Error:", error);
