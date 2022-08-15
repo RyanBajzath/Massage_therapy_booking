@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const CreateProfilePage = () => {
   const { user } = useAuth0();
-  console.log(user);
+  // console.log(user);
   // const [userName, setUserName] = useState("");
   // const [userEmail, setUserEmail] = useState("");
   // const [userPhoneNumber, setUserPhoneNumber] = useState("");

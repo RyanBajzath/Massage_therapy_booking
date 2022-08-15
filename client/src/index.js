@@ -15,7 +15,7 @@ import { createRoot } from "react-dom/client";
 const AUTH0_DOMAIN = process.env.REACT_APP_DOMAIN;
 const AUTH0_CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 
-console.log(AUTH0_DOMAIN, AUTH0_CLIENT_ID);
+// console.log(AUTH0_DOMAIN, AUTH0_CLIENT_ID);
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);

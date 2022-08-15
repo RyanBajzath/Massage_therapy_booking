@@ -28,7 +28,7 @@ const createProfile = async (req, res) => {
 //Read profile by its :_id param getProfileById
 const getProfile = async (req, res) => {
   const _id = req.params._id;
-  console.log(_id);
+  // console.log(_id);
   const client = new MongoClient(MONGO_URI, options);
   try {
     await client.connect();

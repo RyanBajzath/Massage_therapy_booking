@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 const SchedulePage = () => {
   const [value, onChange] = useState(new Date());
-  console.log(value);
+  // console.log(value);
   const { user } = useAuth0();
 
   const handleSubmit = (e) => {
