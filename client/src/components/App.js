@@ -10,11 +10,13 @@ import EditProfilePage from "./EditProfilePage";
 import FetchProfilepage from "./FetchProfilePage";
 import DeleteUsePage from "./DeleteUsePage";
 import NavBar from "./NavBar";
+import GlobalStyles from "../GlobalStyles";
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
+        <GlobalStyles />
         <div>
           <NavBar />
           <Switch>

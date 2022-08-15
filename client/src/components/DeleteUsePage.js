@@ -12,10 +12,10 @@ const DeleteUsePage = () => {
     fetch(`/profiles/${user.email}`, {
       method: "DELETE",
     })
-      .then((res) => res.json()) // or res.json()
+      // .then((res) => res.json()) // or res.json()
       .then((res) => {
         res.status === 404 && Swal.fire("Already Deleted");
-        res.status === 200 && Swal.fire("Profile Deleted");
+        res.status === 204 && Swal.fire("Profile Deleted");
         console.log(res.status);
       });
   };
@@ -36,7 +36,7 @@ const DeleProfileContainer = styled.div`
   /* align-content: center; */
   flex-direction: column;
   background-color: mistyrose;
-  height: 100vh;
+  height: 90vh;
   border-right: black solid 4px;
   border-left: black solid 4px;
   border-bottom: black solid 4px;

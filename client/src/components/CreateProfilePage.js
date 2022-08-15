@@ -476,7 +476,7 @@ const CreateProfileContainer = styled.div`
   /* align-content: center; */
   flex-direction: column;
   background-color: mistyrose;
-  height: 100vh;
+  height: 90vh;
   border-right: black solid 4px;
   border-left: black solid 4px;
   border-bottom: black solid 4px;

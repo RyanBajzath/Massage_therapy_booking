@@ -12,7 +12,7 @@ const SchedulePage = () => {
   const { user } = useAuth0();
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     fetch(`/profiles/${user.email}`, {
       method: "PATCH",
       headers: {
@@ -24,7 +24,20 @@ const SchedulePage = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        data.status === 201 && Swal.fire("Profile Created");
+        data.status === 200 &&
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Appointment Updated",
+            footer: '<a href="/fetchprofilepage">View Profile</a>',
+          });
+        data.status === 404 &&
+          Swal.fire({
+            icon: "error",
+            title: "Failure",
+            text: "Profile Needs to be created",
+            footer: '<a href="/createprofilepage">Go to Create Profile</a>',
+          });
       })
       .catch((error) => {
         console.error("Error:", error);

@@ -68,6 +68,7 @@ const NavBarContainer = styled.div`
   background-color: rgba(183, 246, 247, 0.5);
 
   border: 3px black solid;
+  height: 10vh;
 `;
 
 const StyledNavLink = styled(NavLink)`

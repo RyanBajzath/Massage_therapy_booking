@@ -48,7 +48,7 @@ const EditProfilePage = () => {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     fetch(`/profiles/${user.email}`, {
       method: "PATCH",
       headers: {
@@ -97,8 +97,20 @@ const EditProfilePage = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        data.status === 201 && Swal.fire("Profile Updated");
-        data.status === 500 && Swal.fire("error");
+        data.status === 200 &&
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Profile Updated",
+            footer: '<a href="/fetchprofilepage">View Profile</a>',
+          });
+        data.status === 404 &&
+          Swal.fire({
+            icon: "error",
+            title: "Failure",
+            text: "Profile Needs to be created",
+            footer: '<a href="/createprofilepage">Go to Create Profile</a>',
+          });
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -428,6 +440,7 @@ const CreateProfileContainer = styled.div`
   border-right: black solid 4px;
   border-left: black solid 4px;
   border-bottom: black solid 4px;
+  height: 90vh;
 `;
 
 const StyledTitle = styled.h2`
