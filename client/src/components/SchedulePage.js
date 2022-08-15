@@ -63,7 +63,7 @@ const ScheduleDiv = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: mistyrose;
-  height: 100vh;
+  height: 90vh;
   border-right: black solid 4px;
   border-left: black solid 4px;
   border-bottom: black solid 4px;

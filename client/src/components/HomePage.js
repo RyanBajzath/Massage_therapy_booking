@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import Profile from "./Profile";
@@ -6,15 +6,30 @@ import { useAuth0 } from "@auth0/auth0-react";
 import FetchProfilePage from "./FetchProfilePage";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios"; // axios
 
 function HomePage() {
   const { user, isAuthenticated, isLoading } = useAuth0();
+
+  const [joke, setJoke] = useState("");
+
+  // fetch the joke
+  useEffect(() => {
+    axios
+      .get(
+        "https://v2.jokeapi.dev/joke/Any?blacklistFlags=racist,sexist,explicit&type=single"
+      )
+      .then((res) => {
+        setJoke(res.data.joke);
+      });
+  }, []);
 
   if (isLoading) {
     return <div>Loading ...</div>;
   }
   return (
     <HomePageDiv>
+      <p>{joke}</p>
       <LogoDiv>
         <Logo src={require("../images/logo.png")} />
       </LogoDiv>
