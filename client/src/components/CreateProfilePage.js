@@ -159,7 +159,6 @@ const CreateProfilePage = () => {
 
   return (
     <CreateProfileContainer>
-      CreateProfile
       <form onSubmit={handleSubmit}>
         <StyledTitle>Basic Info</StyledTitle>
         <BasicInfoDiv>

@@ -53,7 +53,7 @@ const NavBar = () => {
         </StyledNavLink>
 
         {/* <FetchProfilePage /> */}
-        {user ? <StyledLogoutButton /> : <LoginButton />}
+        {user ? <LogoutButton /> : <LoginButton />}
       </NavBarContainer>
     </div>
   );
@@ -62,7 +62,7 @@ const NavBar = () => {
 const NavBarContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   /* width: 80vw; */
   /* background-color: rgba(0, 0, 0, 0.05); */
   background-color: rgba(183, 246, 247, 0.5);
@@ -85,11 +85,8 @@ const StyledNavLink = styled(NavLink)`
 
 const IconName = styled.p`
   color: grey;
-  margin-left: 0.5vw;
+  margin-left: 0.25vw;
   /* font-size: 20px; */
 `;
 
-const StyledLogoutButton = styled(LogoutButton)`
-  border: none;
-`;
 export default NavBar;
