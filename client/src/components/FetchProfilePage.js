@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import styled from "styled-components";
+import moment from "moment";
 
 const FetchProfilepage = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [userInfo, setUserInfo] = useState({});
-
+  const date = moment(userInfo?.appointment).format("  MMMM Do YYYY ");
+  console.log(date);
   // console.log(user.email);
 
   useEffect(() => {
@@ -19,12 +21,12 @@ const FetchProfilepage = () => {
         console.log(error);
       });
   }, []);
-  // console.log(userInfo);
+  console.log(userInfo);
 
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-
+  console.log(user);
   return (
     isAuthenticated && (
       <ProfileInfoDiv>
@@ -90,7 +92,7 @@ const FetchProfilepage = () => {
           <StyledTitles>Next appointment</StyledTitles>
         </RecommendedTitleDiv>
         <NextAppointmentDiv>
-          <p>{userInfo.appointment}</p>
+          <p>{date}</p>
         </NextAppointmentDiv>
         <RecommendedTitleDiv>
           <StyledTitles>
@@ -103,6 +105,14 @@ const FetchProfilepage = () => {
           <div>
             {userInfo.neck && (
               <StretchImg src={require("../images/neckStretch.png")} />
+            )}
+          </div>
+          <div>
+            {userInfo.RightShoulder && (
+              <StretchImg
+                style={{ transform: "scaleX(-1)" }}
+                src={require("../images/shoulderStretch.png")}
+              />
             )}
           </div>
           <div>
