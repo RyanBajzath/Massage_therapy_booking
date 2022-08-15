@@ -7,7 +7,12 @@ import moment from "moment";
 const FetchProfilepage = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [userInfo, setUserInfo] = useState({});
-  const date = moment(userInfo?.appointment).format("  MMMM Do YYYY ");
+  let date = "nothing";
+
+  if (userInfo.appointment) {
+    date = moment(userInfo.appointment).format("  MMMM Do YYYY ");
+  }
+
   console.log(date);
   // console.log(user.email);
 
@@ -133,6 +138,14 @@ const FetchProfilepage = () => {
           <div>
             {userInfo.leftLeg && (
               <StretchImg src={require("../images/legStretch.png")} />
+            )}
+          </div>
+          <div>
+            {userInfo.rightLeg && (
+              <StretchImg
+                style={{ transform: "scaleX(-1)" }}
+                src={require("../images/legStretch.png")}
+              />
             )}
           </div>
         </RecommendedDiv>
