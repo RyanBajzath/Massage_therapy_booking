@@ -10,12 +10,17 @@ const AboutUsPage = () => {
           <AboutUsDiv>
             <h2>Phone Number: 438-234-8306</h2>
 
-            <h2>Address: 4866 René-Lévesque Blvd </h2>
+            <h2>
+              Address: Mount Royal City Hall, 90 Av. Roosevelt, Mount Royal,
+              Quebec H3R 1Z5
+            </h2>
+            <Icons>
+              <Stylediframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44697.3340785211!2d-73.6896713923242!3d45.55870588742309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc919b0e9107cd3%3A0x2bcc87c29613b17c!2sMount%20Royal%20City%20Hall!5e0!3m2!1sen!2sca!4v1660676427757!5m2!1sen!2sca" />
+              <PandaMilk src="https://media.giphy.com/media/8XOaUWWGR8QU5Oc6J1/giphy.gif" />
+            </Icons>
           </AboutUsDiv>
         </LeftDiv>
-        <rightDiv>
-          <PandaMilk src="https://media.giphy.com/media/8XOaUWWGR8QU5Oc6J1/giphy.gif" />
-        </rightDiv>
+        <rightDiv></rightDiv>
       </TitleDiv>
     </AboutUsContainer>
   );
@@ -38,7 +43,7 @@ const TitleDiv = styled.div`
   align-items: center;
   justify-content: center;
   border: 4px solid black;
-  width: 50vw;
+  /* width: 50vw; */
   padding: 15px;
 `;
 const LeftDiv = styled.div``;
@@ -55,6 +60,16 @@ const AboutUsDiv = styled.div`
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: flex-end; */
+`;
+
+const Icons = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const Stylediframe = styled.iframe`
+  border: 1px black solid;
+  height: 30vh;
 `;
 
 export default AboutUsPage;
