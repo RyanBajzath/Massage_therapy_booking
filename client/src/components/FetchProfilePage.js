@@ -218,7 +218,7 @@ const RecommendedDiv = styled.div`
 `;
 const StretchImg = styled.img`
   /* height: 200px; */
-  width: 20vw;
+  width: 30vw;
   /* margin-left: -50px; */
 `;
 
