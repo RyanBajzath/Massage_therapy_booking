@@ -18,7 +18,7 @@ View profile:
 ![image](https://user-images.githubusercontent.com/104209377/184965295-1fe55935-4e55-452e-8791-65bd61be9a82.png)
 
 Appointment Page: 
-![image](https://user-images.githubusercontent.com/104209377/184965544-1576c5c4-7eff-410a-ba5d-4528a819e441.png)
+![image](https://user-images.githubusercontent.com/104209377/184965693-d824208b-0022-4e0c-aa73-e16aac480cbe.png)
 
 
 
