@@ -148,8 +148,20 @@ const CreateProfilePage = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        data.status === 201 && Swal.fire("Profile Created");
-        data.status === 500 && Swal.fire("Profile Already Created!");
+        data.status === 201 &&
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Profile Created",
+            footer: '<a href="/fetchprofilepage">View Profile</a>',
+          });
+        data.status === 500 &&
+          Swal.fire({
+            icon: "error",
+            title: "Failure",
+            text: "Profile Needs to be updated",
+            footer: '<a href="/editprofilepage">Go to Create Profile</a>',
+          });
       })
 
       .catch((error) => {

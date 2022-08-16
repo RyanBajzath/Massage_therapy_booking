@@ -13,7 +13,6 @@ function HomePage() {
 
   const [joke, setJoke] = useState("");
 
-  // fetch the joke
   useEffect(() => {
     axios
       .get(

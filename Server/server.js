@@ -42,10 +42,10 @@ app
   .delete("/profiles/:_id", deleteProfile)
 
   //endpoints CRUD for Appointments
-  .post(`/appointments`, getAppointment)
-  .get(`/appointments/:_id`, createAppointment)
-  .patch("/appointments/:_id", updateAppointment)
-  .delete("/appointments/:_id", deleteAppointment)
+  .post(`/appointment`, createAppointment)
+  .get(`/appointment/:_id`, getAppointment)
+  .patch("/appointment/:_id", updateAppointment)
+  .delete("/appointment/:_id", deleteAppointment)
 
   .listen(port, () => {
     console.log(`listening on port ${port}`);

@@ -16,8 +16,8 @@ const DeleteUsePage = () => {
       .then((res) => {
         res.status === 404 && Swal.fire("Already Deleted");
         res.status === 204 && Swal.fire("Profile Deleted");
-        // console.log(res.status);
-      }, []);
+        console.log(res.status);
+      });
   };
 
   return (

@@ -10,7 +10,11 @@ const SchedulePage = () => {
   const [value, onChange] = useState(new Date());
   // console.log(value);
   const { user } = useAuth0();
-
+  const activeStartDate = new Date();
+  const date1 = new Date(2022, 8, 22);
+  const date2 = new Date(2022, 8, 25);
+  const disabledDates = [date1.getDate(), date2.getDate()];
+  console.log(new Date(2022, 8, 22));
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`/profiles/${user.email}`, {
@@ -47,9 +51,18 @@ const SchedulePage = () => {
   return (
     <form onSubmit={handleSubmit}>
       <ScheduleDiv>
-        <StyledCalendar onChange={onChange} value={value} />
+        <StyledCalendar
+          onChange={onChange}
+          value={value}
+          tileDisabled={({ activeStartDate, date }) =>
+            date.getDay() === 0 ||
+            date.getDay() === 1 ||
+            disabledDates.includes(date.getDate())
+          }
+        />
         <ButtonDiv>
           <Button>Create Appointment</Button>
+
           <PandaMilk src="https://media.giphy.com/media/PeGgFlioo8EbstEQH4/giphy.gif" />
         </ButtonDiv>
       </ScheduleDiv>
