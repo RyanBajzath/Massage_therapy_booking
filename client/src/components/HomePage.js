@@ -28,7 +28,6 @@ function HomePage() {
   }
   return (
     <HomePageDiv>
-      <p>{joke}</p>
       <LogoDiv>
         <Logo src={require("../images/logo.png")} />
       </LogoDiv>
@@ -52,8 +51,10 @@ function HomePage() {
             Pump oxygen and nutrients into tissues and vital organs, improving
             circulation
           </h3>
+          <h4>Laughter is medication, heres a joke:</h4>
         </FactsBottom>
       </FactsContainer>
+      <h3>{joke}</h3>
     </HomePageDiv>
   );
 }

@@ -54,10 +54,11 @@ const SchedulePage = () => {
         <StyledCalendar
           onChange={onChange}
           value={value}
-          tileDisabled={({ activeStartDate, date }) =>
-            date.getDay() === 0 ||
-            date.getDay() === 1 ||
-            disabledDates.includes(date.getDate())
+          tileDisabled={
+            ({ activeStartDate, date }) =>
+              date.getDay() === 0 || date.getDay() === 1
+            // ||
+            // disabledDates.includes(date.getDate())
           }
         />
         <ButtonDiv>
