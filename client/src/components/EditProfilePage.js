@@ -4,6 +4,7 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Swal from "sweetalert2";
+import DeleteUsePage from "./DeleteUsePage";
 
 const EditProfilePage = () => {
   const { user } = useAuth0();
@@ -426,6 +427,9 @@ const EditProfilePage = () => {
           <Button>Update Profile</Button>
           <PandaMilk src="https://media.giphy.com/media/DTdSXmfoa8tnBnoxi6/giphy.gif" />
         </ButtonDiv>
+        <StyledNavLink to="/deleteprofilepage">
+          <IconName>Delete profile</IconName>
+        </StyledNavLink>
       </form>
     </CreateProfileContainer>
   );
@@ -521,6 +525,26 @@ const Button = styled.button`
 const PandaMilk = styled.img`
   height: 30vh;
   /* border-radius: 15px; */
+`;
+
+const StyledNavLink = styled(NavLink)`
+  display: inline-block;
+
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  /* padding: 15px; */
+  margin-left: 45vw;
+  &:hover {
+    cursor: pointer;
+    outline: solid black 3px;
+  }
+`;
+
+const IconName = styled.p`
+  color: grey;
+  margin-left: 0.25vw;
+  /* font-size: 20px; */
 `;
 
 export default withAuthenticationRequired(EditProfilePage, {

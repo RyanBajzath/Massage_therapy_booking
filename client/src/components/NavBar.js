@@ -43,9 +43,9 @@ const NavBar = () => {
           <FiUsers size="3vw" />
           <IconName>Update profile</IconName>
         </StyledNavLink>
-        <StyledNavLink to="/deleteprofilepage">
+        <StyledNavLink to="/aboutuspage">
           <FiUserX size="3vw" />
-          <IconName>Delete profile</IconName>
+          <IconName>About Us</IconName>
         </StyledNavLink>
         <StyledNavLink to="/scheduleappointment">
           <FiCalendar size="3vw" />

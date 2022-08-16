@@ -11,6 +11,7 @@ import FetchProfilepage from "./FetchProfilePage";
 import DeleteUsePage from "./DeleteUsePage";
 import NavBar from "./NavBar";
 import GlobalStyles from "../GlobalStyles";
+import AboutUsPage from "./AboutUsPage";
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
           <Switch>
             <Route exact path="/">
               <HomePage />
+            </Route>
+            <Route exact path="/aboutuspage">
+              <AboutUsPage />
             </Route>
 
             <Route exact path="/deleteprofilepage">

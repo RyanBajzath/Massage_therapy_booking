@@ -16,8 +16,8 @@ const DeleteUsePage = () => {
     })
       // .then((res) => res.json()) // or res.json()
       .then((res) => {
-        res.status === 404 && Swal.fire("Already Deleted");
-        res.status === 204 && Swal.fire("Profile Deleted");
+        res.status === 404 && Swal.fire("Already Deleted, Logging out.");
+        res.status === 204 && Swal.fire("Profile Deleted, Logging out.");
         console.log(res.status);
       })
       // .then(() => logout({ returnTo: window.location.origin }));
@@ -31,7 +31,7 @@ const DeleteUsePage = () => {
       <ButtonDiv>
         <PandaSad src="https://media.giphy.com/media/AcfLX2WCoOue5grXMo/giphy.gif" />
         <Button onClick={userHandleDelete}>delete profile</Button>
-        <h1>You can always create a new file after!</h1>
+        <h1>You can always create a new Profile</h1>
       </ButtonDiv>
     </DeleProfileContainer>
   );
