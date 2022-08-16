@@ -529,12 +529,14 @@ const PandaMilk = styled.img`
 
 const StyledNavLink = styled(NavLink)`
   display: inline-block;
-
+  position: absolute;
   text-decoration: none;
   color: black;
   font-weight: bold;
   /* padding: 15px; */
   margin-left: 45vw;
+  bottom: 5vh;
+
   &:hover {
     cursor: pointer;
     outline: solid black 3px;

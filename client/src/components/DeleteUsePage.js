@@ -31,7 +31,6 @@ const DeleteUsePage = () => {
       <ButtonDiv>
         <PandaSad src="https://media.giphy.com/media/AcfLX2WCoOue5grXMo/giphy.gif" />
         <Button onClick={userHandleDelete}>delete profile</Button>
-        <h1>You can always create a new Profile</h1>
       </ButtonDiv>
     </DeleProfileContainer>
   );

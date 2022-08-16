@@ -16,6 +16,7 @@ import { FiUserX } from "react-icons/fi";
 import { FiUsers } from "react-icons/fi";
 import { FiCalendar } from "react-icons/fi";
 import { FiHome } from "react-icons/fi";
+import { FiPhone } from "react-icons/fi";
 
 const NavBar = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -44,7 +45,7 @@ const NavBar = () => {
           <IconName>Update profile</IconName>
         </StyledNavLink>
         <StyledNavLink to="/aboutuspage">
-          <FiUserX size="3vw" />
+          <FiPhone size="3vw" />
           <IconName>About Us</IconName>
         </StyledNavLink>
         <StyledNavLink to="/scheduleappointment">
