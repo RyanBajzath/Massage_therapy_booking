@@ -3,9 +3,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import styled from "styled-components";
 import Swal from "sweetalert2";
+import { LogoutButton } from "./LogoutButton";
 
 const DeleteUsePage = () => {
   const { user } = useAuth0();
+  const { logout } = useAuth0();
 
   const userHandleDelete = (e) => {
     e.preventDefault();
@@ -17,7 +19,11 @@ const DeleteUsePage = () => {
         res.status === 404 && Swal.fire("Already Deleted");
         res.status === 204 && Swal.fire("Profile Deleted");
         console.log(res.status);
-      });
+      })
+      // .then(() => logout({ returnTo: window.location.origin }));
+      .then(
+        setTimeout(() => logout({ returnTo: window.location.origin }), 5000)
+      );
   };
 
   return (
