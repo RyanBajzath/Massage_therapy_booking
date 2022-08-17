@@ -170,6 +170,8 @@ const StyledTitles = styled.h2`
   display: flex;
   justify-content: center;
   border-bottom: 3px gray solid;
+  margin-bottom: 15px;
+  margin-top: 15px;
 `;
 
 const BasicInfoDiv = styled.div`
@@ -218,7 +220,7 @@ const RecommendedDiv = styled.div`
 `;
 const StretchImg = styled.img`
   /* height: 200px; */
-  width: 30vw;
+  width: 25vw;
   /* margin-left: -50px; */
 `;
 

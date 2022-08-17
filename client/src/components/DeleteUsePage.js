@@ -62,8 +62,13 @@ const Button = styled.button`
   border: 3px black solid;
   background-color: RGB(149, 125, 173);
   max-height: 10vh;
+
   &:active {
     transform: translateY(4px);
+  }
+  &:hover {
+    transform: scale(1.05);
+    background-color: red;
   }
 `;
 

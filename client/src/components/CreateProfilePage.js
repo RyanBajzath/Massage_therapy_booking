@@ -174,96 +174,94 @@ const CreateProfilePage = () => {
       <form onSubmit={handleSubmit}>
         <StyledTitle>Basic Info</StyledTitle>
         <BasicInfoDiv>
-          <BasicInfoDivTop>
-            {/* <span>Name:</span>
-             */}
-            <div>
-              <label for="name">First name:</label>
-              <input
-                onChange={handleUserChange}
-                placeholder="Name here"
-                name="name"
-                type="text"
-                required
-              />
-            </div>
-            <div>
-              <label for="phone">Phone :</label>
-              <input
-                onChange={handleUserChange}
-                placeholder="Phone number here"
-                name="phone"
-                type="text"
-                required
-              />
-            </div>
-            <div>
-              <label for="birthday">Birthday :</label>
-              <input
-                onChange={handleUserChange}
-                placeholder="birthday here"
-                name="birthday"
-                type="text"
-                required
-              />
-            </div>
-            <div>
-              <label for="occupation">Occupation :</label>
-              <input
-                onChange={handleUserChange}
-                placeholder="Occupation here"
-                name="occupation"
-                type="text"
-                required
-              />
-            </div>
-          </BasicInfoDivTop>
-          <BasicInfoDivBottom>
-            <div>
-              <span>Emergency Contact:</span>
-              <input
-                onChange={handleUserChange}
-                placeholder="Emergency Contact here"
-                name="emergencyContact"
-                type="text"
-                required
-              />
-            </div>
-            <div>
-              <span>Address:</span>
-              <input
-                onChange={handleUserChange}
-                placeholder="Address Number"
-                name="address"
-                type="text"
-                required
-              />
-            </div>
-            <div>
-              <span>Medication</span>
-              <input
-                onChange={handleUserChange}
-                placeholder="Medication"
-                name="medication"
-                type="text"
-                required
-              />
-            </div>
-            <div>
-              <span>Any other physical activity?:</span>
-              <input
-                onChange={handleUserChange}
-                placeholder="other physical activity"
-                name="otherPhysicalActivity"
-                type="text"
-                required
-              />
-            </div>
-          </BasicInfoDivBottom>
+          {/* <BasicInfoDivTop> */}
+          {/* <span>Name:</span>
+           */}
+          <LittleBox>
+            <label for="name">First name:</label>
+            <input
+              onChange={handleUserChange}
+              placeholder="Name here"
+              name="name"
+              type="text"
+              required
+            />
+            {/* </div> */}
+            {/* <div> */}
+            <label for="phone">Phone :</label>
+            <input
+              onChange={handleUserChange}
+              placeholder="Phone number here"
+              name="phone"
+              type="text"
+              required
+            />
+          </LittleBox>
+          <LittleBox>
+            <label for="birthday">Birthday :</label>
+            <input
+              onChange={handleUserChange}
+              placeholder="birthday here"
+              name="birthday"
+              type="text"
+              required
+            />
+            {/* </div>
+            <div> */}
+            <label for="occupation">Occupation :</label>
+            <input
+              onChange={handleUserChange}
+              placeholder="Occupation here"
+              name="occupation"
+              type="text"
+              required
+            />
+          </LittleBox>
+          {/* </BasicInfoDivTop>
+          <BasicInfoDivBottom> */}
+          <LittleBox>
+            <span>Emergency Contact:</span>
+            <input
+              onChange={handleUserChange}
+              placeholder="Emergency Contact here"
+              name="emergencyContact"
+              type="text"
+              required
+            />
+
+            <span>Address:</span>
+            <input
+              onChange={handleUserChange}
+              placeholder="Address Number"
+              name="address"
+              type="text"
+              required
+            />
+          </LittleBox>
+          <LittleBox>
+            <span>Medication</span>
+            <input
+              onChange={handleUserChange}
+              placeholder="Medication"
+              name="medication"
+              type="text"
+              required
+            />
+
+            <span>Any other physical activity?:</span>
+            <input
+              onChange={handleUserChange}
+              placeholder="other physical activity"
+              name="otherPhysicalActivity"
+              type="text"
+              required
+            />
+          </LittleBox>
+          {/* </BasicInfoDivBottom> */}
         </BasicInfoDiv>
         <StyledTitle>Where do you have tension?</StyledTitle>
         <TensionDiv>
-          <TensionDivTop>
+          <LittleBox>
             <div>
               <span>Head</span>
               <input
@@ -282,6 +280,8 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />
             </div>
+          </LittleBox>
+          <LittleBox>
             <div>
               <span>Left shoulder</span>
               <input
@@ -300,6 +300,8 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />
             </div>
+          </LittleBox>
+          <LittleBox>
             <div>
               <span>Left arm</span>
               <input
@@ -309,8 +311,6 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />
             </div>
-          </TensionDivTop>
-          <TensionDivBottom>
             <div>
               <span>Right arm</span>
               <input
@@ -320,6 +320,8 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />{" "}
             </div>{" "}
+          </LittleBox>
+          <LittleBox>
             <div>
               <span>Upperback</span>
               <input
@@ -338,6 +340,8 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />{" "}
             </div>{" "}
+          </LittleBox>
+          <LittleBox>
             <div>
               <span>Left Leg</span>
               <input
@@ -356,11 +360,11 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />
             </div>
-          </TensionDivBottom>
+          </LittleBox>
         </TensionDiv>
         <StyledTitle>Select those that apply</StyledTitle>
         <HealthIssuesDiv>
-          <HealthIssuesDivTop>
+          <LittleBox>
             <div>
               <span>Circulatory issues</span>
               <input
@@ -379,6 +383,9 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />
             </div>
+          </LittleBox>
+
+          <LittleBox>
             <div>
               <span>Skin Condition</span>
               <input
@@ -395,8 +402,11 @@ const CreateProfilePage = () => {
                 name="urinary"
                 value="tension"
                 onChange={handleUserChange}
-              />
+              />{" "}
             </div>
+          </LittleBox>
+
+          <LittleBox>
             <div>
               <span>Lymphatic system issues</span>
               <input
@@ -406,8 +416,6 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />
             </div>
-          </HealthIssuesDivTop>
-          <HealthIssuesDivBottom>
             <div>
               <span>Nervouse system issues</span>
               <input
@@ -417,6 +425,9 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />
             </div>
+          </LittleBox>
+
+          <LittleBox>
             <div>
               <span>Muscular system isues</span>
               <input
@@ -435,6 +446,8 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />
             </div>
+          </LittleBox>
+          <LittleBox>
             <div>
               <span>Ebdocrine system issues</span>
               <input
@@ -453,26 +466,30 @@ const CreateProfilePage = () => {
                 onChange={handleUserChange}
               />
             </div>
-          </HealthIssuesDivBottom>
+          </LittleBox>
         </HealthIssuesDiv>
         <StyledTitle>Massage Session information</StyledTitle>
         <SessioninfoDiv>
-          <span>Please list any areas you wish us to avoid:</span>
-          <input
-            onChange={handleUserChange}
-            placeholder="Avoid areas"
-            name="avoidAreas"
-            type="text"
-            required
-          />
-          <span>Session Goals:</span>
-          <input
-            onChange={handleUserChange}
-            placeholder="goals here"
-            name="goals"
-            type="text"
-            required
-          />
+          <div>
+            <span>Please list any areas you wish us to avoid:</span>
+            <input
+              onChange={handleUserChange}
+              placeholder="Avoid areas"
+              name="avoidAreas"
+              type="text"
+              required
+            />
+          </div>
+          <div>
+            <span>Session Goals:</span>
+            <input
+              onChange={handleUserChange}
+              placeholder="goals here"
+              name="goals"
+              type="text"
+              required
+            />
+          </div>
         </SessioninfoDiv>
         <ButtonDiv>
           <Button>Create Profile</Button>
@@ -486,7 +503,7 @@ const CreateProfilePage = () => {
 const CreateProfileContainer = styled.div`
   display: flex;
   /* align-content: center; */
-  flex-direction: column;
+  /* flex-direction: column; */
   background-color: mistyrose;
   height: 90vh;
   border-right: black solid 4px;
@@ -497,12 +514,16 @@ const CreateProfileContainer = styled.div`
 const StyledTitle = styled.h2`
   display: flex;
   border-bottom: 3px gray solid;
-  margin-left: 2vw;
+  margin: 2vh;
 `;
 
 const BasicInfoDiv = styled.div`
-  margin-left: 2vw;
+  /* margin-left: 2vw; */
   width: 90vw;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  /* margin-right: 2vw; */
 `;
 
 const BasicInfoDivTop = styled.div`
@@ -517,42 +538,51 @@ const BasicInfoDivBottom = styled.div`
 
 const TensionDiv = styled.div`
   margin-left: 2vw;
+  display: flex;
   width: 90vw;
+  font-size: 20px;
 `;
 
 const TensionDivTop = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const TensionDivBottom = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const HealthIssuesDiv = styled.div`
   margin-left: 2vw;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
   width: 90vw;
+  font-size: 20px;
 `;
 
 const HealthIssuesDivTop = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const HealthIssuesDivBottom = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const SessioninfoDiv = styled.div`
-  margin-left: 2vw;
+  /* margin-left: 2vw; */
   width: 90vw;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
 `;
 const ButtonDiv = styled.div`
   display: flex;
   justify-content: center;
-  /* margin-top: 30px; */
+  margin-top: -30px;
 
   align-items: center;
 `;
@@ -560,17 +590,28 @@ const ButtonDiv = styled.div`
 const Button = styled.button`
   /* text-decoration: none; */
   border-radius: 18px;
-  font-size: 50px;
+  font-size: 40px;
   border: 3px black solid;
   background-color: RGB(149, 125, 173);
   max-height: 10vh;
+
   &:active {
     transform: translateY(4px);
+  }
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 
 const PandaMilk = styled.img`
   height: 30vh;
+`;
+
+const LittleBox = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 20vw;
 `;
 
 export default withAuthenticationRequired(CreateProfilePage, {
