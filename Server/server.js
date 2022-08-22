@@ -23,6 +23,7 @@ const port = 8000;
 const {
   getProfile,
   getProfiles,
+  getAllAppointments,
   createProfile,
   deleteProfile,
   updateProfile,
@@ -38,6 +39,7 @@ app
   .post(`/profiles`, createProfile)
   .get(`/profiles/:_id`, getProfile)
   .get("/profiles", getProfiles)
+  .get("/appointments", getAllAppointments)
   .patch("/profiles/:_id", updateProfile)
   .delete("/profiles/:_id", deleteProfile)
 

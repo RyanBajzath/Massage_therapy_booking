@@ -46,6 +46,21 @@ const getProfiles = async (req, res) => {
   }
 };
 
+//get all appointments
+const getAllAppointments = async (req, res) => {
+  try {
+    const result = await db
+      .collection("profiles")
+      .find({}, { projection: { _id: 1, appointment: 1 } })
+      .toArray();
+    result
+      ? res.status(200).json({ status: 201, data: result })
+      : res.status(404).json({ status: 404, data: "Not Found" });
+  } catch (err) {
+    res.status(500).json({ status: 500, message: err.message });
+  }
+};
+
 //Patch a profile by its :_id param
 const updateProfile = async (req, res) => {
   const _id = req.params._id;
@@ -99,6 +114,7 @@ const deleteAppointment = (req, res) => {};
 module.exports = {
   getProfile,
   getProfiles,
+  getAllAppointments,
   createProfile,
   updateProfile,
   deleteProfile,
