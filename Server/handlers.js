@@ -1,12 +1,12 @@
 //Importing key from .env
 require("dotenv").config();
+
+// Connecting to MongoDB
 const { MONGO_URI } = process.env;
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
-
-// Connecting to MongoDB
 const { MongoClient, ObjectId } = require("mongodb");
 const client = new MongoClient(MONGO_URI, options);
 const db = client.db("finalproject");
