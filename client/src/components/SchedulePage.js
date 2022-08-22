@@ -17,7 +17,7 @@ const SchedulePage = () => {
   console.log(new Date(2022, 8, 22));
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`/profiles/${user.email}`, {
+    fetch(`/profiles/${user.sub}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
