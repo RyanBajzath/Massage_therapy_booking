@@ -17,7 +17,7 @@ const FetchProfilepage = () => {
   // console.log(user.email);
   console.log(user);
   useEffect(() => {
-    fetch(`/profiles/${user.email}`)
+    fetch(`/profiles/${user.sub}`)
       .then((res) => res.json())
       .then((data) => {
         setUserInfo(data.data);

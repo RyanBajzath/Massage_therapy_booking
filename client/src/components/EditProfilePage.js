@@ -46,10 +46,10 @@ const EditProfilePage = () => {
   const handleUserChange = (e) => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
-
+  console.log(user);
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`/profiles/${user.email}`, {
+    fetch(`/profiles/${user.sub}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const EditProfilePage = () => {
       body: JSON.stringify({
         ...userInfo,
 
-        _id: user.email,
+        _id: user.sub,
         name: e.target.name.value,
         phone: e.target.phone.value,
         birthday: e.target.birthday.value,
