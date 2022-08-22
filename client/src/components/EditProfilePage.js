@@ -44,7 +44,6 @@ const EditProfilePage = () => {
   });
 
   const handleUserChange = (e) => {
-    // e.preventDefault();
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
 

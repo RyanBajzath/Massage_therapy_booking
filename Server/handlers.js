@@ -7,23 +7,26 @@ const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
-
+const client = new MongoClient(MONGO_URI, options);
+const db = client.db("finalproject");
 //logic for CRUD operations, creating handles.
 
 //For profiles
 //Create a profile and give it a _id in the body
 const createProfile = async (req, res) => {
-  const client = new MongoClient(MONGO_URI, options);
   try {
-    await client.connect();
-    const db = client.db("finalproject");
+    // await client.connect();
+
     const result = await db.collection("profiles").insertOne(req.body);
+
+    console.log();
     return res.status(201).json({ status: 201, data: result });
   } catch (err) {
     return res.status(500).json({ status: 500, message: err.message });
-  } finally {
-    client.close();
   }
+  // finally {
+  //   client.close();
+  // }
 };
 //Read profile by its :_id param getProfileById
 const getProfile = async (req, res) => {

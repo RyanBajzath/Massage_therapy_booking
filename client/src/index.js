@@ -11,6 +11,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 // );
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { ProfileProvider } from "./context/ProfileContext";
 
 const AUTH0_DOMAIN = process.env.REACT_APP_DOMAIN;
 const AUTH0_CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
@@ -27,7 +28,9 @@ root.render(
       clientId={AUTH0_CLIENT_ID}
       redirectUri={window.location.origin}
     >
-      <App />
+      <ProfileProvider>
+        <App />
+      </ProfileProvider>
     </Auth0Provider>
   </StrictMode>
 );

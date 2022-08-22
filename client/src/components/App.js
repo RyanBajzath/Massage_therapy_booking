@@ -12,8 +12,30 @@ import DeleteUsePage from "./DeleteUsePage";
 import NavBar from "./NavBar";
 import GlobalStyles from "../GlobalStyles";
 import AboutUsPage from "./AboutUsPage";
+import { useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { defaultValues } from "../context/DefaultValue";
 
 const App = () => {
+  const { user } = useAuth0();
+
+  useEffect(() => {
+    if (user) {
+      fetch("/profiles", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...user,
+          _id: user.sub,
+          ...defaultValues,
+        }),
+      });
+    }
+  }, [user?.sub]);
+
+  console.log(user);
   return (
     <div>
       <BrowserRouter>
