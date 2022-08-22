@@ -28,18 +28,18 @@ const NavBar = () => {
     <div>
       <NavBarContainer>
         {/* <p>Welcome, {user.name}!</p> */}
+
         <StyledNavLink to="/">
           <FiHome size="3vw" />
           <IconName>Home Page</IconName>
         </StyledNavLink>
-        <StyledNavLink to="/fetchprofilepage">
-          <FiUser size="3vw" />
-          <IconName>See profile</IconName>
-        </StyledNavLink>
-        <StyledNavLink to="/createprofilepage">
-          <FiUserCheck size="3vw" />
-          <IconName>Create Profile</IconName>
-        </StyledNavLink>
+        {user && (
+          <StyledNavLink to="/fetchprofilepage">
+            <FiUser size="3vw" />
+            <IconName>See profile</IconName>
+          </StyledNavLink>
+        )}
+
         <StyledNavLink to="/editprofilepage">
           <FiUsers size="3vw" />
           <IconName>Update profile</IconName>
