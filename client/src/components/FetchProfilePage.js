@@ -3,6 +3,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import styled from "styled-components";
 import moment from "moment";
+import { NavLink } from "react-router-dom";
+import { FiUsers } from "react-icons/fi";
 
 const FetchProfilepage = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -13,9 +15,6 @@ const FetchProfilepage = () => {
     date = moment(userInfo.appointment).format("  MMMM Do YYYY ");
   }
 
-  console.log(date);
-  // console.log(user.email);
-  console.log(user);
   useEffect(() => {
     fetch(`/profiles/${user.sub}`)
       .then((res) => res.json())
@@ -31,7 +30,7 @@ const FetchProfilepage = () => {
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-  console.log(user);
+
   return (
     isAuthenticated && (
       <ProfileInfoDiv>
@@ -149,6 +148,10 @@ const FetchProfilepage = () => {
             )}
           </div>
         </RecommendedDiv>
+        <StyledNavLink to="/editprofilepage">
+          <FiUsers size="3vw" />
+          <IconName>Update profile</IconName>
+        </StyledNavLink>
       </ProfileInfoDiv>
     )
   );
@@ -223,7 +226,23 @@ const StretchImg = styled.img`
   width: 25vw;
   /* margin-left: -50px; */
 `;
-
+const StyledNavLink = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 15px;
+  &:hover {
+    cursor: pointer;
+    outline: solid black 3px;
+  }
+`;
+const IconName = styled.p`
+  color: grey;
+  margin-left: 0.25vw;
+  /* font-size: 20px; */
+`;
 export default withAuthenticationRequired(FetchProfilepage, {
   // Show a message while the user waits to be redirected to the login page.
   onRedirecting: () => <div>Redirecting you to the login page...</div>,

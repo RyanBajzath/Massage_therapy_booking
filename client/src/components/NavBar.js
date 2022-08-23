@@ -39,11 +39,10 @@ const NavBar = () => {
             <IconName>See profile</IconName>
           </StyledNavLink>
         )}
-
-        <StyledNavLink to="/editprofilepage">
+        {/* <StyledNavLink to="/editprofilepage">
           <FiUsers size="3vw" />
           <IconName>Update profile</IconName>
-        </StyledNavLink>
+        </StyledNavLink> */}
         <StyledNavLink to="/aboutuspage">
           <FiPhone size="3vw" />
           <IconName>About Us</IconName>
