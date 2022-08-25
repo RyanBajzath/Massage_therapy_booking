@@ -235,13 +235,16 @@ const StyledNavLink = styled(NavLink)`
 
   text-decoration: none;
   color: black;
+  left: 4px;
   font-weight: bold;
-  padding: 15px;
-  color: red;
+  padding: 20px;
+  color: black;
   outline: solid black 3px;
+  background-color: rgb(255, 253, 217);
   &:hover {
     cursor: pointer;
-    outline: solid black 5px;
+    transform: scale(1.02);
+    /* outline: solid black 5px; */
   }
 `;
 const IconName = styled.p`
