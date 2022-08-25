@@ -229,18 +229,25 @@ const StretchImg = styled.img`
 const StyledNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
+  width: fit-content;
+  position: absolute;
+  /* right: 1vw; */
+
   text-decoration: none;
   color: black;
   font-weight: bold;
   padding: 15px;
+  color: red;
+  outline: solid black 3px;
   &:hover {
     cursor: pointer;
-    outline: solid black 3px;
+    outline: solid black 5px;
   }
 `;
 const IconName = styled.p`
   color: grey;
   margin-left: 0.25vw;
+
   /* font-size: 20px; */
 `;
 export default withAuthenticationRequired(FetchProfilepage, {
