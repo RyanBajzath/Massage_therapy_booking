@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -14,7 +14,14 @@ const SchedulePage = () => {
   const date1 = new Date(2022, 8, 22);
   const date2 = new Date(2022, 8, 25);
   const disabledDates = [date1.getDate(), date2.getDate()];
-  console.log(new Date(2022, 8, 22));
+  // console.log(new Date(2022, 8, 22));
+
+  useEffect(() => {
+    fetch(`/appointments`)
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`/profiles/${user.sub}`, {

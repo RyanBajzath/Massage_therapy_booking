@@ -18,6 +18,7 @@ import { defaultValues } from "../context/DefaultValue";
 
 const App = () => {
   const { user } = useAuth0();
+  console.log(user);
 
   useEffect(() => {
     if (user) {

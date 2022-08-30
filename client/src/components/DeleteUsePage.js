@@ -11,7 +11,7 @@ const DeleteUsePage = () => {
 
   const userHandleDelete = (e) => {
     e.preventDefault();
-    fetch(`/profiles/${user.email}`, {
+    fetch(`/profiles/${user.sub}`, {
       method: "DELETE",
     })
       // .then((res) => res.json()) // or res.json()
