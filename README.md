@@ -3,10 +3,10 @@
 This website will allow the user to sign in, schedule a massage and have a profile.
 
 Features; 
-1) Log in page .
-2) Schedule an appointment.
-3) Create, Updated and Delete Profile and Bio.
-4) Have recomnded stretches based on muscle tension and see next appointment.
+Log in page.
+Schedule an appointment.
+Create, Update and Delete Profile and Bio.
+Have recommended stretches based on muscle tension and see the next appointment.
 
 Home Page:
 ![image](https://user-images.githubusercontent.com/104209377/184964796-81e06e86-57ee-4087-a5f2-b335e7dca744.png)
